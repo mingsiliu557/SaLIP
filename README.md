@@ -36,7 +36,7 @@ The ```main.py``` script is the main entry point of the project. It performs the
 ## Example command
 
 ```
-python main.py --config ./config/lung.json --mode "sam_clip"  --prompt_mode "crops" --dataset "cxr" --seed 1234 
+python main.py --config ./config/lung.json --mode "sam_clip"  --prompt_mode "crops" --data "cxr" --seed 1234 
 ```
 
 ## Contact
