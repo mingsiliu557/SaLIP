@@ -291,8 +291,12 @@ def log_images_to_wandb_batch(scores, imgs_bboxes, idx):
         for i, img_bbox in enumerate(sorted_imgs_bboxes):
             row = i // num_cols  # Calculate the row index
             col = i % num_cols  # Calculate the column index
+            if num_rows == 1:
+                axs[row].imshow(img_bbox)
+            else:
+                axs[row, col].imshow(img_bbox)
 
-            axs[row, col].imshow(img_bbox)
+            #axs[row, col].imshow(img_bbox)
             axs[row, col].axis('off')
         
         # Hide empty subplots

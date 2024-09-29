@@ -70,7 +70,7 @@ if __name__ == '__main__':
     parser.add_argument('--data', type = str, required = True, help = "specify the name of dataset")
     parser.add_argument('--site', type = int, required = False, help = "specify the site of dataset (optional), only for cc359 dataset")
     parser.add_argument('--seed', type = int, required = True, help = "random seed")
-    parser.add_argument('--suffix', type=str, required = False, help = "checkpoint suffix")
+    parser.add_argument('--suffix', type=str, default = "vit_h",required = False, help = "checkpoint suffix")
     parser.add_argument('--wandb_mode', type=str, required = False, help='wandb mode')
     
 

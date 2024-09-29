@@ -285,7 +285,7 @@ def sam_predicton(sam, image, resize_transform, bboxes, config, mode):
 def get_eval(dataset, sam, config, suffix, wandb_mode, prompt_mode, mode):
 
     folder_time = datetime.now().strftime("%Y-%m-%d_%I-%M-%S_%p")
-    wandb_run = wandb.init( project='SAM', entity='sidra-aleem2', name = config['model_name'] + "_" + suffix +"_"+ folder_time, mode = wandb_mode)
+    wandb_run = wandb.init( project='SAM', entity='liumingsi915', name = config['model_name'] + "_" + suffix +"_"+ folder_time, mode = wandb_mode)
   
    # ----- loading the models  ----- 
     
@@ -318,7 +318,7 @@ def get_eval(dataset, sam, config, suffix, wandb_mode, prompt_mode, mode):
                 max_indices, scores = retrieve_relevant_crop(img_crops, prompts, clip_model, preprocess, config)
 
                 # ----- logging crops to wandb  ----- 
-                log_images_to_wandb_batch(scores, img_crops, file_name)
+                #log_images_to_wandb_batch(scores, img_crops, file_name)
                 
                  # ------  bbox cordinates relevant to crop ------
                 bboxes, relevant_crop, img_with_bboxes = get_sam_prompts(image, masks,max_indices , img_crops)
